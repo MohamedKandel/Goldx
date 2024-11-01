@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.correct.goldx.ui.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" />
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.correct.goldx.ui.auth.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.correct.goldx.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.correct.goldx.ui.auth.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" />
+    <fragment
+        android:id="@+id/verificationFragment"
+        android:name="com.correct.goldx.ui.auth.VerificationFragment"
+        android:label="fragment_verification"
+        tools:layout="@layout/fragment_verification" />
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        android:name="com.correct.goldx.ui.auth.NewPasswordFragment"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_new_password" />
+    <fragment
+        android:id="@+id/passwordChangedFragment"
+        android:name="com.correct.goldx.ui.auth.PasswordChangedFragment"
+        android:label="fragment_password_changed"
+        tools:layout="@layout/fragment_password_changed" />
+    <fragment
+        android:id="@+id/completeProfileFragment"
+        android:name="com.correct.goldx.ui.auth.CompleteProfileFragment"
+        android:label="fragment_complete_profile"
+        tools:layout="@layout/fragment_complete_profile" />
+    <fragment
+        android:id="@+id/askingFragment"
+        android:name="com.correct.goldx.ui.auth.AskingFragment"
+        android:label="fragment_asking"
+        tools:layout="@layout/fragment_asking" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.correct.goldx.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:name="com.correct.goldx.ui.contact.ContactUsFragment"
+        android:label="fragment_contact_us"
+        tools:layout="@layout/fragment_contact_us" />
+    <fragment
+        android:id="@+id/uploadPhotoFragment"
+        android:name="com.correct.goldx.ui.auth.UploadPhotoFragment"
+        android:label="fragment_upload_photo"
+        tools:layout="@layout/fragment_upload_photo" />
+</navigation>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ContactUsDialog"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="@dimen/_12sdp"
+    android:paddingTop="@dimen/_19sdp"
+    android:paddingEnd="@dimen/_12sdp"
+    android:paddingBottom="@dimen/_12sdp">
+
+    <TextView
+        android:id="@+id/btm_title"
+        style="@style/BlackTextView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:text="@string/face_issue"
+        android:textSize="@dimen/_13ssp"
+
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/close_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:paddingStart="@dimen/_7sdp"
+        android:paddingEnd="@dimen/_1sdp"
+        android:paddingBottom="@dimen/_7sdp"
+        android:paddingTop="@dimen/_1sdp"
+        android:id="@+id/close_icon"
+        app:layout_constraintTop_toTopOf="@id/btm_title"
+        app:layout_constraintBottom_toBottomOf="@+id/btm_title"/>
+
+    <TextView
+        android:id="@+id/btm_msg"
+        style="@style/ViewAllStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:fontFamily="@font/poppins_light"
+        android:text="@string/contact_us_msg"
+        android:textSize="@dimen/_11ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btm_title" />
+
+    <ImageView
+        android:id="@+id/wa_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:src="@drawable/wa_icon"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btm_msg" />
+
+    <ImageView
+        android:id="@+id/chat_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginTop="@dimen/_19sdp"
+        android:src="@drawable/chat_icon"
+        app:layout_constraintStart_toEndOf="@id/wa_icon"
+        app:layout_constraintTop_toBottomOf="@id/btm_msg" />
+
+    <TextView
+        android:id="@+id/txt_work_hour"
+        style="@style/ViewAllStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_17sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_medium"
+        android:text="@string/work_hours"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wa_icon" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

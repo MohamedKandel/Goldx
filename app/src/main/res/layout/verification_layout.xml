@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="@dimen/_5sdp">
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/verification_drawable"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/txt_first"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="@dimen/_12ssp"
+        style="@style/BlackTextView"
+        android:inputType="text"
+        android:layout_marginEnd="@dimen/_12sdp"/>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/verification_drawable"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:id="@+id/txt_second"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="@dimen/_12ssp"
+        style="@style/BlackTextView"
+        android:inputType="text"
+        android:layout_marginEnd="@dimen/_12sdp"/>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/verification_drawable"
+        android:layout_weight="1"
+        android:id="@+id/txt_third"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="@dimen/_12ssp"
+        style="@style/BlackTextView"
+        android:inputType="text"
+        android:layout_marginEnd="@dimen/_12sdp"/>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/verification_drawable"
+        android:layout_weight="1"
+        android:id="@+id/txt_fourth"
+        android:gravity="center"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="@dimen/_12ssp"
+        style="@style/BlackTextView"
+        android:inputType="text"
+        />
+
+</LinearLayout>

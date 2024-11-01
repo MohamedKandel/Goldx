@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/BackgroundColor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.auth.UploadPhotoFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_45sdp"
+                android:background="@color/transparent"
+                android:paddingStart="@dimen/_1sdp"
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingEnd="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_5sdp"
+                android:src="@drawable/back_icon"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_upload"
+                style="@style/BlackTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_48sdp"
+                android:fontFamily="@font/nunito_bold"
+                android:text="@string/upload_pic"
+                android:textSize="@dimen/_19ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/back_btn" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/upload_pic"
+                android:layout_width="@dimen/_131sdp"
+                android:layout_height="@dimen/_131sdp"
+                android:layout_marginTop="@dimen/_23sdp"
+                app:shapeAppearanceOverlay="@style/PersonImage"
+                android:scaleType="fitXY"
+                android:src="@drawable/dashed_circle"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_upload" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_upload"
+                style="@style/SendMsgButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_39sdp"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/add_photo"
+                android:textSize="@dimen/_11ssp"
+                app:cornerRadius="@dimen/_25sdp"
+                app:layout_constraintEnd_toEndOf="@id/upload_pic"
+                app:layout_constraintStart_toStartOf="@id/upload_pic"
+                app:layout_constraintTop_toBottomOf="@id/upload_pic" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/photo_instructions_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_30sdp"
+                android:layout_marginTop="@dimen/_110sdp"
+                android:layout_marginEnd="@dimen/_30sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_upload">
+
+
+                    <ImageView
+                        android:id="@+id/clear_face_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/face_icon"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/txt_clear_face"
+                        app:layout_constraintEnd_toEndOf="@+id/txt_clear_face"/>
+
+                    <TextView
+                        android:id="@+id/txt_clear_face"
+                        style="@style/BlackTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/clear_face"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/clear_face_icon"
+                        app:layout_constraintStart_toStartOf="parent"/>
+
+
+                    <ImageView
+                        android:id="@+id/sunglass_icon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/sunglass_icon"
+                        app:layout_constraintTop_toTopOf="@+id/clear_face_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/clear_face_icon"
+                        app:layout_constraintStart_toStartOf="@+id/txt_no_glass"
+                        app:layout_constraintEnd_toEndOf="@+id/txt_no_glass"/>
+
+                    <TextView
+                        android:id="@+id/txt_no_glass"
+                        style="@style/BlackTextView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/_24sdp"
+                        android:fontFamily="@font/nunito_bold"
+                        android:text="@string/no_glass"
+                        android:textSize="@dimen/_12ssp"
+                        app:layout_constraintTop_toBottomOf="@+id/sunglass_icon"
+                        app:layout_constraintStart_toEndOf="@+id/txt_clear_face" />
+
+                <ImageView
+                    android:id="@+id/group_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/group_icon"
+                    app:layout_constraintEnd_toEndOf="@+id/txt_no_group"
+                    app:layout_constraintStart_toStartOf="@+id/txt_no_group"
+                    app:layout_constraintTop_toTopOf="@+id/sunglass_icon"
+                    app:layout_constraintBottom_toBottomOf="@+id/sunglass_icon"/>
+
+                <TextView
+                    android:id="@+id/txt_no_group"
+                    style="@style/BlackTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_23sdp"
+                    android:fontFamily="@font/nunito_bold"
+                    android:text="@string/no_group"
+                    android:textSize="@dimen/_12ssp"
+                    app:layout_constraintBottom_toBottomOf="@+id/txt_no_glass"
+                    app:layout_constraintStart_toEndOf="@+id/txt_no_glass"
+                    app:layout_constraintTop_toBottomOf="@id/group_icon"
+                    app:layout_constraintTop_toTopOf="@+id/txt_no_glass" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

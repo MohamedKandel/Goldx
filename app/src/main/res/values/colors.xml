@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="warning_color">#C79516</color>
+    <color name="blue_link">#007AFF</color>
+    <color name="alphaBlack">#8C000000</color>
+    <color name="background">#FFFAFA</color>
+    <color name="transparent">#00000000</color>
+    <color name="auth_edit_text">#F2F2F2</color>
+    <color name="gray">#808080</color>
+    <color name="sub_gray_color">#C9C9C9</color>
+    <color name="weak">#B03636</color>
+    <color name="gold">#B08D36</color>
+    <color name="success">#36B038</color>
+    <color name="normal_strength">#9C9797</color>
+    <color name="border_color">#9e9e9e</color>
+    <color name="application_bg">#FFFCF5</color>
+    <color name="brown_color">#4A3B17</color>
+    <color name="dialog_msg_light">#606268</color>
+    <color name="background_light">#100E3C</color>
+    <color name="permission_request_light_btn">#A08031</color>
+    <color name="unselected_icon_color_light">#C81C1C1C</color>
+</resources>

@@ -1,0 +1,98 @@
+<resources>
+    <string name="app_name">Goldx</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hello">Hello!</string>
+    <string name="create_account">Create your account</string>
+    <string name="create">Create Account</string>
+    <string name="mail">Email</string>
+    <string name="mailOrPhone">Email or phone number</string>
+    <string name="pass">Password</string>
+    <string name="enter_password">Enter password</string>
+    <string name="password_length">Password must be at least 6 characters</string>
+    <string name="special">Special character (@, &#38;, #, $, %)</string>
+    <string name="capital">1 Capital character &#38; 1 small character </string>
+    <string name="signup">Sign Up</string>
+    <string name="already_user">Already have an account ?</string>
+    <string name="login">Login</string>
+    <string name="welcome_back">Welcome back!</string>
+    <string name="login_account">Login to your account</string>
+    <string name="remember">Remember me</string>
+    <string name="forget">Forgot password</string>
+    <string name="not_user">Don\'t have an account ?</string>
+    <string name="request_mail">Please enter your email address to receive a verification code .</string>
+    <string name="send_code">Send Code</string>
+    <string name="verification">Verification</string>
+    <string name="request_code">Please enter the verification code we just sent to your e-mail .</string>
+    <string name="verify">Verify</string>
+    <string name="resend_code">Didn\'t receive the code? <u>Resend</u></string>
+    <string name="new_password_title">Create new password</string>
+    <string name="request_new_password">Please enter your new password</string>
+    <string name="new_password">New password</string>
+    <string name="weak">Weak</string>
+    <string name="medium">Medium</string>
+    <string name="strong">Strong</string>
+    <string name="change_password">Change password</string>
+    <string name="password_changed_title">Password changed !</string>
+    <string name="password_changed_msg">Your password has been changed</string>
+    <string name="country">Country</string>
+    <string name="egypt">Egypt/\nمصر</string>
+    <string name="greece">Greece/\nاليونان</string>
+    <string name="Language">Language</string>
+    <string name="english">English</string>
+    <string name="arabic">عربي</string>
+    <string name="greek">ελληνικά</string>
+    <string name="location">Location</string>
+    <string name="location_request">Allow maps to access your location while using the app?</string>
+    <string name="notification">Notification</string>
+    <string name="notification_request">Please enable notifications to receive updates and reminders</string>
+    <string name="allow">Allow</string>
+    <string name="turn_on">Turn on</string>
+    <string name="skip">Skip for now</string>
+    <string name="home">Home</string>
+    <string name="categories">Categories</string>
+    <string name="cart">Cart</string>
+    <string name="profile">Profile</string>
+    <string name="temp_marquee">We offer safe and secure shipping worldwide</string>
+    <string name="view_all">View all</string>
+    <string name="best_seller">Best Seller</string>
+    <string name="add_cart">Add to Cart</string>
+    <string name="face_issue">Facing any issue ? </string>
+    <string name="contact_us_msg">contact with our team and they will help you with anything that you need</string>
+    <string name="work_hours">All 365 days between 9 AM to 6 PM</string>
+    <string name="contact_info">Contact Information</string>
+    <string name="start_live_chat">Say something to start a live chat!</string>
+    <string name="contact_number">+1012 3456 789</string>
+    <string name="contact_mail">demo@gmail.com</string>
+    <string name="contact_location">132 Dartmouth Street Boston,\n Massachusetts 02156 United States</string>
+    <string name="fname">First Name</string>
+    <string name="lname">Last Name</string>
+    <string name="phone_number">Phone number</string>
+    <string name="subjects">Select Subject?</string>
+    <string name="support">Support</string>
+    <string name="size">Size</string>
+    <string name="other">Other</string>
+    <string name="order">Orders</string>
+    <string name="msg">Write your message</string>
+    <string name="send">Send Message</string>
+    <string name="name">Name</string>
+    <string name="enter_name">Enter your name</string>
+    <string name="city">City</string>
+    <string name="street">Street</string>
+    <string name="enter_street">your street</string>
+    <string name="building">Building number</string>
+    <string name="enter_building">Your Building number</string>
+    <string name="upload_pic">Upload your photo</string>
+    <string name="add_photo">Add photo</string>
+    <string name="clear_face">Clear face</string>
+    <string name="no_glass">No sunglasses</string>
+    <string name="no_group">No group</string>
+
+    <string-array name="countries">
+        <item>Your country</item>
+        <item>Egypt</item>
+        <item>Greece</item>
+    </string-array>
+
+    <string name="city_spn_hint">Your city</string>
+</resources>

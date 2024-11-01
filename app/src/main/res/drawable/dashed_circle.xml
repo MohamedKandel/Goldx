@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item>
+        <shape android:shape="oval">
+            <stroke android:dashWidth="@dimen/_2sdp"
+                android:dashGap="@dimen/_2sdp"
+                android:color="#757575"
+                android:width="@dimen/_1sdp"/>
+            <corners android:radius="@dimen/_20sdp"/>
+        </shape>
+    </item>
+
+    <item android:drawable="@drawable/camera_icon"
+        android:left="@dimen/_54sdp"
+        android:right="@dimen/_54sdp"
+        android:top="@dimen/_54sdp"
+        android:bottom="@dimen/_54sdp"
+        android:gravity="center"
+        android:width="@dimen/_27sdp"
+        android:height="@dimen/_24sdp"/>
+
+</layer-list>

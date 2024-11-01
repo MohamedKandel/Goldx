@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.auth.AskingFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/ask_bg"
+        android:scaleType="centerCrop"
+        android:id="@+id/main_bg"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/ask_white_drawable"
+        android:id="@+id/white_bg" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/logo_2"
+        android:adjustViewBounds="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/btn_sign_up"
+        android:layout_marginBottom="@dimen/_7sdp"
+        android:id="@+id/img_logo"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_up_btn"
+        android:text="@string/create"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="@dimen/_12ssp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        app:layout_constraintBottom_toTopOf="@id/btn_login"
+        android:id="@+id/btn_sign_up"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_14sdp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/login_btn"
+        android:text="@string/login"
+        android:textColor="@color/gold"
+        android:fontFamily="@font/inter_bold"
+        android:textSize="@dimen/_12ssp"
+        android:id="@+id/btn_login"
+        android:textAllCaps="false"
+        android:layout_marginBottom="@dimen/_18sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_14sdp"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

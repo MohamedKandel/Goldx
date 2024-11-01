@@ -1,0 +1,115 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Goldx" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.Goldx" parent="Base.Theme.Goldx" />
+
+    <style name="BackgroundColor">
+        <item name="android:background">@color/background</item>
+    </style>
+
+    <style name="ApplicationBackGround">
+        <item name="android:background">@color/application_bg</item>
+    </style>
+
+    <style name="BlackTextView">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="GrayTextView">
+        <item name="android:textColor">@color/gray</item>
+    </style>
+
+    <style name="SubTextViewStyle">
+        <item name="android:textColor">@color/sub_gray_color</item>
+    </style>
+
+    <style name="InfoTextViewsStyle">
+        <item name="android:textColor">#8D8D8D</item>
+    </style>
+
+    <style name="SendMsgButton">
+        <item name="backgroundTint">#AE892E</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="RememberTextView">
+        <item name="android:textColor">#1A1A1A</item>
+    </style>
+
+    <style name="LinkTextStyle">
+        <item name="android:textColor">@color/blue_link</item>
+    </style>
+
+    <style name="AlphaBlackTextView">
+        <item name="android:textColor">@color/alphaBlack</item>
+    </style>
+
+    <style name="RadioButtonStyle" parent="Theme.AppCompat.Light">
+        <item name="colorAccent">@color/black</item>
+        <item name="android:textColorPrimary">@color/border_color</item>
+    </style>
+
+    <style name="WhiteCardView">
+        <item name="cardBackgroundColor">@color/white</item>
+    </style>
+
+    <style name="DialogTextView">
+        <item name="android:textColor">@color/dialog_msg_light</item>
+    </style>
+
+    <style name="PermissionTextColor">
+        <item name="android:textColor">@color/permission_request_light_btn</item>
+        <item name="strokeColor">@color/permission_request_light_btn</item>
+        <item name="strokeWidth">@dimen/_1sdp</item>
+    </style>
+
+    <style name="Marquee">
+        <item name="android:background">@color/black</item>
+    </style>
+
+    <style name="WhiteTextView">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="AdImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/_7sdp</item>
+        <item name="cornerSizeBottomLeft">@dimen/_7sdp</item>
+    </style>
+
+    <style name="PersonImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+
+    <style name="ViewAllStyle">
+        <item name="android:textColor">#404040</item>
+    </style>
+
+    <style name="CategoryStyle">
+        <item name="cardBackgroundColor">#F6F3F3</item>
+    </style>
+
+    <style name="BestSellerStyle">
+        <item name="cardBackgroundColor">#FAFAFC</item>
+    </style>
+    
+    <style name="ProductTextStyle">
+        <item name="android:textColor">#393F42</item>
+    </style>
+
+    <style name="AddToCartButton">
+        <item name="backgroundTint">#D0AC5A</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="ContactUsDialog">
+        <item name="android:background">@drawable/contact_us_drawable</item>
+    </style>
+
+</resources>
