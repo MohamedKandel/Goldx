@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="@dimen/_17sdp"
+    android:paddingStart="@dimen/_42sdp"
+    android:paddingEnd="@dimen/_40sdp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/txt_gold"
+        android:text="@string/gold"
+        style="@style/BlackTextView"
+        android:fontFamily="@font/poppins_xlight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/transparent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/txt_gold"
+        app:layout_constraintBottom_toBottomOf="@id/txt_gold"
+        android:src="@drawable/go_icon"
+        android:id="@+id/btn_go_gold" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toStartOf="@id/btn_go_gold"
+        app:layout_constraintTop_toTopOf="@id/txt_gold"
+        app:layout_constraintBottom_toBottomOf="@id/txt_gold"
+        app:layout_constraintStart_toEndOf="@id/txt_gold"
+        android:text="128 items"
+        android:gravity="end"
+        android:id="@+id/txt_count_gold"
+        android:layout_marginEnd="@dimen/_7sdp"
+        android:fontFamily="@font/pro_sans_light"
+        style="@style/ItemsCountStyle"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        app:layout_constraintTop_toBottomOf="@id/txt_gold"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="#F1F2F4"
+        android:id="@+id/line"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

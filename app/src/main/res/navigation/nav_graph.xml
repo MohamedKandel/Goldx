@@ -67,4 +67,9 @@
         android:name="com.correct.goldx.ui.auth.UploadPhotoFragment"
         android:label="fragment_upload_photo"
         tools:layout="@layout/fragment_upload_photo" />
+    <fragment
+        android:id="@+id/mainCategoriesFragment"
+        android:name="com.correct.goldx.ui.categories.MainCategoriesFragment"
+        android:label="fragment_main_categories"
+        tools:layout="@layout/fragment_main_categories" />
 </navigation>

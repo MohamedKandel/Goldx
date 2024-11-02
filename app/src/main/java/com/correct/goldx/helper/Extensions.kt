@@ -7,6 +7,7 @@ import android.content.res.Configuration
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.PorterDuff
 import android.net.Uri
 import android.os.Build
 import android.text.method.PasswordTransformationMethod
@@ -18,16 +19,19 @@ import android.view.WindowManager
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
 import androidx.fragment.app.Fragment
+import com.correct.goldx.R
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -158,4 +162,19 @@ fun Uri.getBase64(context: Context): String {
         e.printStackTrace()
         ""
     }
+}
+
+fun ImageView.changeTintColor(color: Int) {
+    this.setColorFilter(color, PorterDuff.Mode.SRC_IN)
+}
+
+fun CardView.setBackgroundColorRandomly() {
+    val colors = listOf(
+        Color.rgb(229,227,228),
+        Color.rgb(229,215,202),
+        Color.rgb(254,212,213),
+        Color.rgb(255,241,194),
+        Color.rgb(199,224,218)
+    )
+    this.setBackgroundColor(colors.random())
 }

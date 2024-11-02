@@ -21,4 +21,12 @@
     <color name="background_light">#100E3C</color>
     <color name="permission_request_light_btn">#A08031</color>
     <color name="unselected_icon_color_light">#C81C1C1C</color>
+    <color name="category_description">#939393</color>
+    <color name="count_item">#A3A5AD</color>
+
+    <color name="card1">#E5E3E4</color>
+    <color name="card2">#E5D7CA</color>
+    <color name="card3">#FED4D5</color>
+    <color name="card4">#FFF1C2</color>
+    <color name="card5">#C7E0DA</color>
 </resources>

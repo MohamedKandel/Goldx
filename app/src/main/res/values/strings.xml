@@ -87,6 +87,10 @@
     <string name="clear_face">Clear face</string>
     <string name="no_glass">No sunglasses</string>
     <string name="no_group">No group</string>
+    <string name="gold">Gold</string>
+    <string name="silver">Silver</string>
+    <string name="silver_gold">Silver plated gold</string>
+    <string name="gold_standard">24K</string>
 
     <string-array name="countries">
         <item>Your country</item>

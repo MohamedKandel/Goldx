@@ -247,6 +247,7 @@ class RegisterFragment : Fragment() {
         }
 
         binding.btnSignUp.setOnClickListener {
+//            findNavController().navigate(R.id.homeFragment)
             val bundle = Bundle()
             bundle.putInt(SOURCE, R.id.registerFragment)
             findNavController().navigate(R.id.uploadPhotoFragment, bundle)

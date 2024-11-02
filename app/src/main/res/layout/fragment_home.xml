@@ -15,6 +15,99 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/top_bar"
+                style="@style/ApplicationBackGround"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/menu"
+                    android:layout_marginStart="@dimen/_12sdp"
+                    android:layout_marginTop="@dimen/_12sdp"
+                    android:layout_marginBottom="@dimen/_12sdp"
+                    android:src="@drawable/menu_icon"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+                <ImageView
+                    android:layout_width="@dimen/_35sdp"
+                    android:layout_height="@dimen/_35sdp"
+                    android:src="@drawable/logo_2"
+                    android:adjustViewBounds="true"
+                    app:layout_constraintStart_toEndOf="@+id/menu"
+                    app:layout_constraintTop_toTopOf="@+id/menu"
+                    app:layout_constraintBottom_toBottomOf="@+id/menu"
+                    android:id="@+id/logo"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintEnd_toStartOf="@+id/circle_drawable"
+                    app:layout_constraintTop_toTopOf="@+id/menu"
+                    app:layout_constraintBottom_toBottomOf="@+id/menu"
+                    android:id="@+id/favourite_icon"
+                    android:layout_marginEnd="-8dp"
+                    android:src="@drawable/fav_icon"/>
+
+                <View
+                    android:layout_width="@dimen/_12sdp"
+                    android:layout_height="@dimen/_12sdp"
+                    android:layout_marginBottom="-8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/favourite_icon"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="@dimen/_12sdp"
+                    android:background="@drawable/circle_view"
+                    android:id="@+id/circle_drawable"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="@+id/circle_drawable"
+                    app:layout_constraintBottom_toBottomOf="@+id/circle_drawable"
+                    app:layout_constraintStart_toStartOf="@+id/circle_drawable"
+                    app:layout_constraintEnd_toEndOf="@+id/circle_drawable"
+                    android:text="0"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/_7ssp"
+                    android:fontFamily="@font/poppins_semi_bold"
+                    android:id="@+id/txt_fav_count"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/notify_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/favourite_icon"
+                    app:layout_constraintTop_toTopOf="@+id/menu"
+                    app:layout_constraintBottom_toBottomOf="@+id/menu"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    android:id="@+id/notification_icon"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/notification_icon"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    app:layout_constraintTop_toTopOf="@+id/menu"
+                    app:layout_constraintBottom_toBottomOf="@+id/menu"
+                    android:id="@+id/search_icon"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/contact_us_icon"
+                    app:layout_constraintEnd_toStartOf="@+id/search_icon"
+                    android:layout_marginEnd="@dimen/_6sdp"
+                    app:layout_constraintTop_toTopOf="@+id/menu"
+                    app:layout_constraintBottom_toBottomOf="@+id/menu"
+                    android:id="@+id/contact_icon"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView_ads"
@@ -28,7 +121,7 @@
                 app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/top_bar"
                 tools:listitem="@layout/ads_list_item" />
 
             <LinearLayout

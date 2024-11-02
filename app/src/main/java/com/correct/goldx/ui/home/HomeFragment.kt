@@ -6,11 +6,14 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import androidx.navigation.fragment.findNavController
 import com.correct.goldx.R
 import com.correct.goldx.databinding.FragmentHomeBinding
 import com.correct.goldx.helper.CastException
 import com.correct.goldx.helper.FragmentChangeListener
 import com.correct.goldx.helper.onBackPressed
+import com.google.android.material.bottomsheet.BottomSheetDialog
 
 class HomeFragment : Fragment() {
 
@@ -46,7 +49,41 @@ class HomeFragment : Fragment() {
             requireActivity().finish()
         }
 
+        binding.contactIcon.setOnClickListener {
+            // contact us bottom sheet
+            contactUs()
+        }
+
         return binding.root
+    }
+
+    private fun contactUs() {
+        val btmSheet = BottomSheetDialog(requireContext())
+        val view = layoutInflater.inflate(R.layout.contact_us_btmsheet,null)
+
+        val wa = view.findViewById<ImageView>(R.id.wa_icon)
+        val chat = view.findViewById<ImageView>(R.id.chat_icon)
+        val close = view.findViewById<ImageView>(R.id.close_icon)
+        // buttons click listener here
+        chat.setOnClickListener {
+            btmSheet.dismiss()
+            btmSheet.cancel()
+            findNavController().navigate(R.id.contactUsFragment)
+        }
+
+        wa.setOnClickListener {
+
+        }
+
+        close.setOnClickListener {
+            btmSheet.dismiss()
+            btmSheet.cancel()
+        }
+
+        btmSheet.setContentView(view)
+        btmSheet.setCancelable(true)
+        btmSheet.setCanceledOnTouchOutside(true)
+        btmSheet.show()
     }
 
 }

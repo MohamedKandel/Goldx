@@ -23,6 +23,7 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.correct.goldx.databinding.ActivityMainBinding
 import com.correct.goldx.helper.FragmentChangeListener
+import com.correct.goldx.helper.changeTintColor
 import com.correct.goldx.helper.hide
 import com.correct.goldx.helper.show
 import com.correct.goldx.ui.SplashFragment
@@ -35,6 +36,7 @@ import com.correct.goldx.ui.auth.PasswordChangedFragment
 import com.correct.goldx.ui.auth.RegisterFragment
 import com.correct.goldx.ui.auth.UploadPhotoFragment
 import com.correct.goldx.ui.auth.VerificationFragment
+import com.correct.goldx.ui.categories.MainCategoriesFragment
 import com.correct.goldx.ui.contact.ContactUsFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -103,41 +105,125 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
 
         setContentView(binding.root)
 
-        binding.contactIcon.setOnClickListener {
-            // contact us bottom sheet
-            contactUs()
+        binding.homeLayout.setOnClickListener {
+            selectItem(R.id.home_layout)
         }
 
-        //viewInsetsListenerNavBar()
+        binding.categoryLayout.setOnClickListener {
+            selectItem(R.id.category_layout)
+        }
+
+        binding.cartLayout.setOnClickListener {
+            selectItem(R.id.cart_layout)
+        }
+
+        binding.profileLayout.setOnClickListener {
+            selectItem(R.id.profile_layout)
+        }
     }
 
-    private fun contactUs() {
-        val btmSheet = BottomSheetDialog(this)
-        val view = layoutInflater.inflate(R.layout.contact_us_btmsheet,null)
+    private fun selectItem(itemID: Int) {
+        when(itemID) {
+            R.id.home_layout -> {
+                // control line visibility
+                binding.homeLine.show()
+                binding.categoryLine.hide()
+                binding.cartLine.hide()
+                binding.profileLine.hide()
 
-        val wa = view.findViewById<ImageView>(R.id.wa_icon)
-        val chat = view.findViewById<ImageView>(R.id.chat_icon)
-        val close = view.findViewById<ImageView>(R.id.close_icon)
-        // buttons click listener here
-        chat.setOnClickListener {
-            btmSheet.dismiss()
-            btmSheet.cancel()
-            navController.navigate(R.id.contactUsFragment)
+                //change icon colors
+                binding.homeIcon.changeTintColor(resources.getColor(R.color.gold,this.theme))
+                binding.categoryIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.cartIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.profileIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+
+                // change text colors
+                binding.txtHome.setTextColor(resources.getColor(R.color.gold,this.theme))
+                binding.txtCart.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtCategory.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtProfile.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+            }
+
+            R.id.category_layout -> {
+                // control line visibility
+                binding.homeLine.hide()
+                binding.categoryLine.show()
+                binding.cartLine.hide()
+                binding.profileLine.hide()
+
+                //change icon colors
+                binding.homeIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.categoryIcon.changeTintColor(resources.getColor(R.color.gold,this.theme))
+                binding.cartIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.profileIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+
+                // change text colors
+                binding.txtHome.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtCategory.setTextColor(resources.getColor(R.color.gold,this.theme))
+                binding.txtCart.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtProfile.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+            }
+
+            R.id.cart_layout -> {
+                // control line visibility
+                binding.homeLine.hide()
+                binding.categoryLine.hide()
+                binding.cartLine.show()
+                binding.profileLine.hide()
+
+                //change icon colors
+                binding.homeIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.categoryIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.cartIcon.changeTintColor(resources.getColor(R.color.gold,this.theme))
+                binding.profileIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+
+                // change text colors
+                binding.txtHome.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtCategory.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtCart.setTextColor(resources.getColor(R.color.gold,this.theme))
+                binding.txtProfile.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+            }
+
+            R.id.profile_layout -> {
+                // control line visibility
+                binding.homeLine.hide()
+                binding.categoryLine.hide()
+                binding.cartLine.hide()
+                binding.profileLine.show()
+
+                //change icon colors
+                binding.homeIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.categoryIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.cartIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.profileIcon.changeTintColor(resources.getColor(R.color.gold,this.theme))
+
+                // change text colors
+                binding.txtHome.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtCategory.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtCart.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtProfile.setTextColor(resources.getColor(R.color.gold,this.theme))
+            }
+
+            else -> {
+                // control line visibility
+                binding.homeLine.show()
+                binding.categoryLine.hide()
+                binding.cartLine.hide()
+                binding.profileLine.hide()
+
+                //change icon colors
+                binding.homeIcon.changeTintColor(resources.getColor(R.color.gold,this.theme))
+                binding.categoryIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.cartIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.profileIcon.changeTintColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+
+                // change text colors
+                binding.txtHome.setTextColor(resources.getColor(R.color.gold,this.theme))
+                binding.txtCart.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtCategory.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+                binding.txtProfile.setTextColor(resources.getColor(R.color.unselected_icon_color_light,this.theme))
+            }
         }
-
-        wa.setOnClickListener {
-
-        }
-
-        close.setOnClickListener {
-            btmSheet.dismiss()
-            btmSheet.cancel()
-        }
-
-        btmSheet.setContentView(view)
-        btmSheet.setCancelable(true)
-        btmSheet.setCanceledOnTouchOutside(true)
-        btmSheet.show()
     }
 
     private fun viewInsetsListenerNavBar() {
@@ -305,13 +391,11 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
             Log.i("Fragment mohamed", "True")
             viewInsetsListenerNavBar()
             binding.btmBar.hide()
-            binding.topBar.hide()
             binding.marqueeLayout.hide()
         } else {
             Log.i("Fragment mohamed", "False")
             viewInsetsListener()
             binding.btmBar.show()
-            binding.topBar.show()
             binding.marqueeLayout.show()
         }
     }
