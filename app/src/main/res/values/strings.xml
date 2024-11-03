@@ -12,6 +12,7 @@
     <string name="password_length">Password must be at least 6 characters</string>
     <string name="special">Special character (@, &#38;, #, $, %)</string>
     <string name="capital">1 Capital character &#38; 1 small character </string>
+    <string name="number_character">1 number</string>
     <string name="signup">Sign Up</string>
     <string name="already_user">Already have an account ?</string>
     <string name="login">Login</string>

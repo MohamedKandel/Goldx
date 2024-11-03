@@ -47,17 +47,6 @@ object RetrofitClient {
     }
 
     fun getClient(baseURL: String): Retrofit {
-        /*val interceptor = HttpLoggingInterceptor().apply {
-            setLevel(HttpLoggingInterceptor.Level.BODY)
-        }
-
-        val client: OkHttpClient = OkHttpClient.Builder()
-            .addInterceptor(interceptor)
-            .connectTimeout(30, TimeUnit.SECONDS)
-            .readTimeout(30, TimeUnit.SECONDS)
-            .writeTimeout(30, TimeUnit.SECONDS)
-            .build()*/
-
         val client = getUnsafeOkHttpClient()
 
         val gson = GsonBuilder()

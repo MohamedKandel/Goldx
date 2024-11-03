@@ -32,6 +32,7 @@ class NewPasswordFragment : Fragment() {
     private var isLengthAdded = false
     private var isSpecialAdded = false
     private var isLetterAdded = false
+    private var isNumberAdded = false
     private lateinit var strengthLiveData: MutableLiveData<Int>
 
     override fun onAttach(context: Context) {
@@ -116,7 +117,7 @@ class NewPasswordFragment : Fragment() {
                         )
                     )
                     if (!isLengthAdded) {
-                        if (strength < 3) {
+                        if (strength < 4) {
                             isLengthAdded = true
                             strength++
                             strengthLiveData.postValue(strength)
@@ -144,6 +145,51 @@ class NewPasswordFragment : Fragment() {
                     }
                 }
 
+                // check if have number or not
+                if (password.any { it.isDigit() }) {
+                    binding.passwordNumberIcon.setColorFilter(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.success
+                        ), android.graphics.PorterDuff.Mode.SRC_IN
+                    )
+                    binding.txtNumberCharacter.setTextColor(
+                        resources.getColor(
+                            R.color.success,
+                            requireContext().theme
+                        )
+                    )
+
+                    if (!isNumberAdded) {
+                        if (strength < 4) {
+                            strength++
+                            isNumberAdded = true
+                            strengthLiveData.postValue(strength)
+                        }
+                    }
+                } else {
+                    binding.passwordNumberIcon.setColorFilter(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.gray
+                        ), android.graphics.PorterDuff.Mode.SRC_IN
+                    )
+                    binding.txtNumberCharacter.setTextColor(
+                        resources.getColor(
+                            R.color.gray,
+                            requireContext().theme
+                        )
+                    )
+
+                    if (isNumberAdded) {
+                        if (strength > 0) {
+                            isNumberAdded = false
+                            strength--
+                            strengthLiveData.postValue(strength)
+                        }
+                    }
+                }
+
                 // check if have special character or not
                 if (password.isContainSpecialCharacter()) {
                     binding.passwordSpecialIcon.setColorFilter(
@@ -160,7 +206,7 @@ class NewPasswordFragment : Fragment() {
                     )
 
                     if (!isSpecialAdded) {
-                        if (strength < 3) {
+                        if (strength < 4) {
                             strength++
                             isSpecialAdded = true
                             strengthLiveData.postValue(strength)
@@ -205,7 +251,7 @@ class NewPasswordFragment : Fragment() {
                     )
 
                     if (!isLetterAdded) {
-                        if (strength < 3) {
+                        if (strength < 4) {
                             strength++
                             isLetterAdded = true
                             strengthLiveData.postValue(strength)
@@ -252,6 +298,10 @@ class NewPasswordFragment : Fragment() {
                     Log.v("Password strength","Medium")
                 }
                 3-> {
+                    binding.txtStatus.text = resources.getString(R.string.medium)
+                    Log.v("Password strength","Medium")
+                }
+                4-> {
                     binding.txtStatus.text = resources.getString(R.string.strong)
                     Log.v("Password strength","Strong")
                 }
@@ -337,6 +387,26 @@ class NewPasswordFragment : Fragment() {
                 )
             }
             3 -> {
+                binding.weakIcon.setColorFilter(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.gold
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                binding.mediumIcon.setColorFilter(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.gold
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+                binding.strongIcon.setColorFilter(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.normal_strength
+                    ), android.graphics.PorterDuff.Mode.SRC_IN
+                )
+            }
+            4 -> {
                 binding.weakIcon.setColorFilter(
                     ContextCompat.getColor(
                         requireContext(),

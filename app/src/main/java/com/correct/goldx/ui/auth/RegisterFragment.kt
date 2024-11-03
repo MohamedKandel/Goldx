@@ -39,7 +39,6 @@ class RegisterFragment : Fragment() {
     private lateinit var viewModel: CitiesViewModel
     private lateinit var cities: MutableList<String>
     private lateinit var arrayAdapter: ArrayAdapter<String>
-    //private lateinit var hintAdapter: HintAdapter<String>
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -93,31 +92,6 @@ class RegisterFragment : Fragment() {
 
         getCities("egypt", false)
 
-        /*binding.citySpn.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(
-                parent: AdapterView<*>?,
-                view: View?,
-                position: Int,
-                id: Long
-            ) {
-                if (position == 0) {
-                    (view as TextView).setTextColor(Color.GRAY)
-                }
-                Log.d("Selected city", cities[position])
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>?) {
-                Log.d("Selected city", "Nothing selected")
-            }
-
-        }
-
-        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        binding.citySpn.adapter = arrayAdapter //hintAdapter //arrayAdapter
-
-        binding.citySpn.setSpinnerAdapter(cities, requireContext())*/
-
         sourceFragment = arguments?.getInt(SOURCE, -1) ?: -1
 
         onBackPressed {
@@ -167,6 +141,35 @@ class RegisterFragment : Fragment() {
                         ), android.graphics.PorterDuff.Mode.SRC_IN
                     )
                     binding.txtPasswordLength.setTextColor(
+                        resources.getColor(
+                            R.color.gray,
+                            requireContext().theme
+                        )
+                    )
+                }
+
+                // check if have number or not
+                if (password.any { it.isDigit() }) {
+                    binding.passwordNumberIcon.setColorFilter(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.success
+                        ), android.graphics.PorterDuff.Mode.SRC_IN
+                    )
+                    binding.txtNumberCharacter.setTextColor(
+                        resources.getColor(
+                            R.color.success,
+                            requireContext().theme
+                        )
+                    )
+                } else {
+                    binding.passwordNumberIcon.setColorFilter(
+                        ContextCompat.getColor(
+                            requireContext(),
+                            R.color.gray
+                        ), android.graphics.PorterDuff.Mode.SRC_IN
+                    )
+                    binding.txtNumberCharacter.setTextColor(
                         resources.getColor(
                             R.color.gray,
                             requireContext().theme
@@ -320,7 +323,7 @@ class RegisterFragment : Fragment() {
             cities.clear()
             cities.add(resources.getString(R.string.city_spn_hint))
             cities.addAll(it.data)
-            binding.citySpn.setSpinnerAdapter(cities,requireContext())
+            binding.citySpn.setSpinnerAdapter(cities, requireContext())
             //arrayAdapter.notifyDataSetChanged()
             binding.citySpn.isEnabled = isEnabled
         }
