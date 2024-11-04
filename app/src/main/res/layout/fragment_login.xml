@@ -81,7 +81,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:id="@+id/txt_mail"
-                android:inputType="text"/>
+                android:inputType="textEmailAddress"/>
 
             <TextView
                 android:layout_width="match_parent"
@@ -193,6 +193,8 @@
                 android:layout_marginEnd="@dimen/_12sdp"
                 app:cornerRadius="@dimen/_4sdp"
                 android:id="@+id/btn_login"
+                android:paddingTop="@dimen/_11sdp"
+                android:paddingBottom="@dimen/_11sdp"
                 android:textSize="@dimen/_11ssp"
                 android:text="@string/login"
                 android:fontFamily="@font/roboto_bold"/>
@@ -219,6 +221,8 @@
                 android:layout_marginStart="@dimen/_12sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 app:cornerRadius="@dimen/_4sdp"
+                android:paddingTop="@dimen/_11sdp"
+                android:paddingBottom="@dimen/_11sdp"
                 android:layout_marginTop="@dimen/_6sdp"
                 android:text="@string/signup"
                 android:textColor="@color/gold"

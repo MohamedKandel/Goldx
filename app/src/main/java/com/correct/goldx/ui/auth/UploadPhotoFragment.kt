@@ -21,14 +21,27 @@ import android.view.ViewGroup
 import androidx.activity.result.ActivityResultCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.correct.goldx.R
+import com.correct.goldx.data.auth.Address
+import com.correct.goldx.data.auth.RegisterBody
 import com.correct.goldx.databinding.FragmentUploadPhotoBinding
 import com.correct.goldx.helper.CastException
+import com.correct.goldx.helper.Constants.FINAL_STEP
+import com.correct.goldx.helper.Constants.OBJECT
+import com.correct.goldx.helper.Constants.SOURCE
 import com.correct.goldx.helper.FragmentChangeListener
 import com.correct.goldx.helper.getBase64
 import com.correct.goldx.helper.onBackPressed
 import com.correct.goldx.helper.parseBase64
+import com.correct.goldx.helper.toast
+import com.correct.goldx.room.User
+import com.correct.goldx.room.UsersDB
+import com.mkandeel.datastore.DataStorage
+import kotlinx.coroutines.launch
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 
@@ -38,6 +51,9 @@ class UploadPhotoFragment : Fragment() {
     private lateinit var binding: FragmentUploadPhotoBinding
     private lateinit var changeListener: FragmentChangeListener
     private lateinit var base64: String
+    private lateinit var viewModel: AuthViewModel
+    private lateinit var usersDB: UsersDB
+    private lateinit var dataStorage: DataStorage
 
     private val arl: ActivityResultLauncher<Intent> = registerForActivityResult(
         ActivityResultContracts.StartActivityForResult()
@@ -93,6 +109,9 @@ class UploadPhotoFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentUploadPhotoBinding.inflate(inflater, container, false)
+        viewModel = ViewModelProvider(this)[AuthViewModel::class.java]
+        usersDB = UsersDB.getDBInstance(requireContext())
+        dataStorage = DataStorage.getInstance(requireContext())
 
         binding.backBtn.setOnClickListener {
             findNavController().navigate(R.id.registerFragment)
@@ -102,11 +121,49 @@ class UploadPhotoFragment : Fragment() {
             findNavController().navigate(R.id.registerFragment)
         }
 
+        val model = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            requireArguments().getParcelable(OBJECT, RegisterBody::class.java)
+        } else {
+            requireArguments().getParcelable(OBJECT)
+        }
+
         binding.btnUpload.setOnClickListener {
             if (this::base64.isInitialized) {
                 Log.d("Image Base64", base64)
+                if (model != null) {
+                    model.image = base64
+
+                    Log.d("sent mohamed Image", model.image!!)
+                    Log.d("sent mohamed Name", model.name)
+                    Log.d("sent mohamed Phone", model.phoneNumber)
+                    Log.d("sent mohamed email", model.email)
+                    Log.d("sent mohamed password", model.password)
+                    Log.d("sent mohamed country", model.address.country)
+                    Log.d("sent mohamed city", model.address.city)
+                    Log.d("sent mohamed street", model.address.street)
+                    Log.d("sent mohamed building", "${model.address.noBuilding}")
+
+                    registerUser(model)
+                }
             }
-            //findNavController().navigate(R.id.verificationFragment)
+        }
+
+        binding.btnSkip.setOnClickListener {
+            if (model != null) {
+                registerUser(
+                    RegisterBody(
+                        name = model.name,
+                        email = model.email, password = model.password,
+                        phoneNumber = model.phoneNumber,
+                        address = Address(
+                            city = model.address.city,
+                            country = model.address.country,
+                            street = model.address.street,
+                            noBuilding = model.address.noBuilding
+                        )
+                    )
+                )
+            }
         }
 
         binding.uploadPic.setOnClickListener {
@@ -120,6 +177,35 @@ class UploadPhotoFragment : Fragment() {
 
 
         return binding.root
+    }
+
+    private fun registerUser(model: RegisterBody) {
+        viewModel.registerUser(model)
+        val observer = object : Observer<Boolean> {
+            override fun onChanged(value: Boolean) {
+                if (value) {
+                    lifecycleScope.launch {
+                        val user = User(
+                            "1", model.name, model.email,
+                            model.phoneNumber, model.password, model.address.country,
+                            model.address.city, model.address.street, model.address.noBuilding
+                        )
+
+                        usersDB.dao().insert(user)
+
+                        dataStorage.putInt(requireContext(), FINAL_STEP,1)
+
+                        val bundle = Bundle()
+                        bundle.putInt(SOURCE, R.id.uploadPhotoFragment)
+                        findNavController().navigate(R.id.verificationFragment, bundle)
+                    }
+                } else {
+                    toast(resources.getString(R.string.failed_register))
+                }
+                viewModel.isRegisteredResponse.removeObserver(this)
+            }
+        }
+        viewModel.isRegisteredResponse.observe(viewLifecycleOwner, observer)
     }
 
     // Load and correct image orientation

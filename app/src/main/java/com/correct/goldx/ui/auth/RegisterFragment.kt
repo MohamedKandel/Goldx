@@ -5,6 +5,7 @@ import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.text.method.DigitsKeyListener
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -13,12 +14,18 @@ import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.correct.goldx.R
+import com.correct.goldx.data.auth.Address
+import com.correct.goldx.data.auth.RegisterBody
 import com.correct.goldx.databinding.FragmentRegisterBinding
 import com.correct.goldx.helper.CastException
+import com.correct.goldx.helper.Constants.FINAL_STEP
+import com.correct.goldx.helper.Constants.OBJECT
 import com.correct.goldx.helper.Constants.SOURCE
 import com.correct.goldx.helper.FragmentChangeListener
 import com.correct.goldx.helper.hide
@@ -28,6 +35,9 @@ import com.correct.goldx.helper.onBackPressed
 import com.correct.goldx.helper.setSpinnerAdapter
 import com.correct.goldx.helper.show
 import com.correct.goldx.helper.showPassword
+import com.correct.goldx.helper.toast
+import com.mkandeel.datastore.DataStorage
+import kotlinx.coroutines.launch
 import me.srodrigo.androidhintspinner.HintAdapter
 import me.srodrigo.androidhintspinner.HintSpinner
 
@@ -39,6 +49,10 @@ class RegisterFragment : Fragment() {
     private lateinit var viewModel: CitiesViewModel
     private lateinit var cities: MutableList<String>
     private lateinit var arrayAdapter: ArrayAdapter<String>
+    private var country = ""
+    private var city = ""
+    private var isPasswordValid = false
+    private lateinit var dataStore: DataStorage
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -65,6 +79,7 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[CitiesViewModel::class.java]
+        dataStore = DataStorage.getInstance(requireContext())
         cities = mutableListOf()
 
         arrayAdapter = object : ArrayAdapter<String>(
@@ -234,6 +249,11 @@ class RegisterFragment : Fragment() {
                         )
                     )
                 }
+
+                isPasswordValid = (password.length >= 6
+                        && password.any { it.isDigit() }
+                        && password.isContainSpecialCharacter()
+                        && (password.any { it.isUpperCase() } && password.any { it.isLowerCase() }))
             }
         })
 
@@ -249,11 +269,70 @@ class RegisterFragment : Fragment() {
             binding.hideIcon.hide()
         }
 
+        binding.txtPhone.addTextChangedListener(object : TextWatcher {
+            override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
+
+            }
+
+            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
+                if (s.toString().isEmpty()) {
+                    binding.txtPhone.keyListener = DigitsKeyListener.getInstance("0123456789+")
+                } else {
+                    if (s.toString().startsWith("+")) {
+                        binding.txtPhone.keyListener = DigitsKeyListener.getInstance("0123456789")
+                    } else {
+                        binding.txtPhone.keyListener = DigitsKeyListener.getInstance("0123456789")
+                    }
+                }
+            }
+
+            override fun afterTextChanged(s: Editable?) {
+                if (!s.toString().startsWith("+")) {
+                    toast(resources.getString(R.string.phone_contain_plus))
+                }
+            }
+        })
+
         binding.btnSignUp.setOnClickListener {
-//            findNavController().navigate(R.id.homeFragment)
-            val bundle = Bundle()
-            bundle.putInt(SOURCE, R.id.registerFragment)
-            findNavController().navigate(R.id.uploadPhotoFragment, bundle)
+            val name = binding.txtName.text.toString()
+            val email = binding.txtMail.text.toString()
+            val phone = binding.txtPhone.text.toString()
+            val street = binding.txtStreet.text.toString()
+            val building = binding.txtBuilding.text.toString()
+            val password = binding.txtPassword.text.toString()
+            val address = Address(
+                city = city,
+                country = country, street = street,
+                noBuilding = building.toInt()
+            )
+
+            if (name.isNotEmpty() && email.isNotEmpty() && phone.isNotEmpty() && street.isNotEmpty()
+                && building.isNotEmpty() && city.isNotEmpty() && country.isNotEmpty() && password.isNotEmpty()
+            ) {
+                if (phone.length < 13) {
+                    toast(resources.getString(R.string.phone_length))
+                } else if (!isPasswordValid) {
+                    toast(resources.getString(R.string.password_not_valid))
+                } else {
+                    val model = RegisterBody(
+                        name = name,
+                        email = email, password = password, phoneNumber = phone,
+                        address = address
+                    )
+                    lifecycleScope.launch {
+                        dataStore.putInt(requireContext(), FINAL_STEP,0)
+                    }
+                    val bundle = Bundle()
+                    bundle.putParcelable(OBJECT, model)
+                    bundle.putInt(SOURCE, R.id.registerFragment)
+                    findNavController().navigate(R.id.uploadPhotoFragment, bundle)
+                }
+            } else {
+                toast(resources.getString(R.string.fill_required))
+            }
+
+
+            //findNavController().navigate(R.id.uploadPhotoFragment, bundle)
         }
 
         val countries = resources.getStringArray(R.array.countries)
@@ -300,11 +379,15 @@ class RegisterFragment : Fragment() {
                     1 -> {
                         Log.d("Selected item", "Egypt")
                         getCities("egypt")
+                        country = "egypt"
+                        city = ""
                     }
 
                     2 -> {
                         Log.d("Selected item", "Greece")
                         getCities("greece")
+                        country = "greece"
+                        city = ""
                     }
                 }
             }
@@ -325,6 +408,26 @@ class RegisterFragment : Fragment() {
             cities.addAll(it.data)
             binding.citySpn.setSpinnerAdapter(cities, requireContext())
             //arrayAdapter.notifyDataSetChanged()
+            binding.citySpn.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+                }
+
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+                    val value = parent!!.getItemAtPosition(position).toString()
+                    if (value == cities[0]) {
+                        (view as TextView).setTextColor(Color.GRAY)
+                    } else {
+                        Log.v("Selected city", value)
+                        city = value
+                    }
+                }
+
+            }
             binding.citySpn.isEnabled = isEnabled
         }
     }

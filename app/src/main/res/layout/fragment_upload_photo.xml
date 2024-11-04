@@ -69,16 +69,35 @@
                 app:layout_constraintStart_toStartOf="@id/upload_pic"
                 app:layout_constraintTop_toBottomOf="@id/upload_pic" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_skip"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:backgroundTint="@color/background"
+                android:fontFamily="@font/poppins_semi_bold"
+                android:text="@string/skip_uploading"
+                android:textColor="@color/gold"
+                android:textSize="@dimen/_11ssp"
+                app:cornerRadius="@dimen/_25sdp"
+                app:layout_constraintStart_toStartOf="@+id/btn_upload"
+                app:layout_constraintEnd_toEndOf="@+id/btn_upload"
+                app:layout_constraintTop_toBottomOf="@+id/btn_upload"
+                app:strokeColor="@color/gold"
+                app:strokeWidth="1dp" />
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/photo_instructions_layout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_30sdp"
-                android:layout_marginTop="@dimen/_110sdp"
+                android:layout_marginTop="@dimen/_68sdp"
                 android:layout_marginEnd="@dimen/_30sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/btn_upload">
+                app:layout_constraintTop_toBottomOf="@id/btn_skip">
 
 
                     <ImageView

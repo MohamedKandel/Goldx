@@ -86,6 +86,37 @@
                 app:layout_constraintTop_toBottomOf="@id/txt_view_name" />
 
             <TextView
+                android:id="@+id/txt_view_phone"
+                style="@style/BlackTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="@string/phone"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toBottomOf="@id/txt_name" />
+
+            <EditText
+                android:id="@+id/txt_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_2sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:background="@drawable/auth_edit_text_drawable"
+                android:fontFamily="@font/roboto_regular"
+                android:hint="@string/enter_phone"
+                android:inputType="phone"
+                android:digits="+0123456789"
+                android:textSize="@dimen/_11ssp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_view_phone" />
+
+
+            <TextView
                 android:id="@+id/txt_view_mail"
                 style="@style/BlackTextView"
                 android:layout_width="match_parent"
@@ -96,7 +127,7 @@
                 android:fontFamily="@font/roboto_medium"
                 android:text="@string/mail"
                 android:textSize="@dimen/_12ssp"
-                app:layout_constraintTop_toBottomOf="@id/txt_name" />
+                app:layout_constraintTop_toBottomOf="@id/txt_phone" />
 
             <EditText
                 android:id="@+id/txt_mail"
@@ -408,6 +439,8 @@
                 android:backgroundTint="@color/gold"
                 android:fontFamily="@font/roboto_bold"
                 android:text="@string/signup"
+                android:paddingTop="@dimen/_11sdp"
+                android:paddingBottom="@dimen/_11sdp"
                 android:textSize="@dimen/_11ssp"
                 app:cornerRadius="@dimen/_4sdp"
                 app:layout_constraintTop_toBottomOf="@+id/password_instruction_layout" />
@@ -434,6 +467,12 @@
                 android:backgroundTint="@color/background"
                 android:fontFamily="@font/poppins_semi_bold"
                 android:text="@string/login"
+                android:paddingTop="@dimen/_11sdp"
+                android:paddingBottom="@dimen/_11sdp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginBottom="@dimen/_18sdp"
                 android:textColor="@color/gold"
                 android:textSize="@dimen/_11ssp"
                 app:cornerRadius="@dimen/_4sdp"

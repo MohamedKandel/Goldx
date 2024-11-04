@@ -11,12 +11,13 @@
         android:layout_height="wrap_content"
         android:background="@drawable/verification_drawable"
         android:layout_weight="1"
+        android:maxLength="1"
         android:gravity="center"
         android:id="@+id/txt_first"
         android:fontFamily="@font/poppins_semi_bold"
         android:textSize="@dimen/_12ssp"
         style="@style/BlackTextView"
-        android:inputType="text"
+        android:inputType="number"
         android:layout_marginEnd="@dimen/_12sdp"/>
 
     <EditText
@@ -25,11 +26,12 @@
         android:background="@drawable/verification_drawable"
         android:layout_weight="1"
         android:gravity="center"
+        android:maxLength="1"
         android:id="@+id/txt_second"
         android:fontFamily="@font/poppins_semi_bold"
         android:textSize="@dimen/_12ssp"
         style="@style/BlackTextView"
-        android:inputType="text"
+        android:inputType="number"
         android:layout_marginEnd="@dimen/_12sdp"/>
 
     <EditText
@@ -39,10 +41,11 @@
         android:layout_weight="1"
         android:id="@+id/txt_third"
         android:gravity="center"
+        android:maxLength="1"
         android:fontFamily="@font/poppins_semi_bold"
         android:textSize="@dimen/_12ssp"
         style="@style/BlackTextView"
-        android:inputType="text"
+        android:inputType="number"
         android:layout_marginEnd="@dimen/_12sdp"/>
 
     <EditText
@@ -52,10 +55,37 @@
         android:layout_weight="1"
         android:id="@+id/txt_fourth"
         android:gravity="center"
+        android:maxLength="1"
         android:fontFamily="@font/poppins_semi_bold"
         android:textSize="@dimen/_12ssp"
         style="@style/BlackTextView"
-        android:inputType="text"
-        />
+        android:inputType="number"
+        android:layout_marginEnd="@dimen/_12sdp"/>
 
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/verification_drawable"
+        android:layout_weight="1"
+        android:id="@+id/txt_fifth"
+        android:gravity="center"
+        android:maxLength="1"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="@dimen/_12ssp"
+        style="@style/BlackTextView"
+        android:inputType="number"
+        android:layout_marginEnd="@dimen/_12sdp"/>
+
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/verification_drawable"
+        android:layout_weight="1"
+        android:id="@+id/txt_sixth"
+        android:gravity="center"
+        android:maxLength="1"
+        android:fontFamily="@font/poppins_semi_bold"
+        android:textSize="@dimen/_12ssp"
+        style="@style/BlackTextView"
+        android:inputType="number"/>
 </LinearLayout>

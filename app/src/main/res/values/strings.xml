@@ -6,7 +6,16 @@
     <string name="create_account">Create your account</string>
     <string name="create">Create Account</string>
     <string name="mail">Email</string>
-    <string name="mailOrPhone">Email or phone number</string>
+    <string name="mailOrPhone">Enter your email</string>
+    <string name="enter_phone">Enter your phone</string>
+    <string name="phone">Phone Number</string>
+    <string name="skip_uploading">Skip</string>
+    <string name="phone_contain_plus">Phone number must start with + symbol</string>
+    <string name="phone_length">Phone number must be starts with + symbol and contain 12 number (+ symbol, country code and phone)</string>
+    <string name="fill_required">Please fill all required fields</string>
+    <string name="password_not_valid">Password not valid</string>
+    <string name="failed_register">Failed to register user</string>
+    <string name="error_occurred">An error occurred please try again</string>
     <string name="pass">Password</string>
     <string name="enter_password">Enter password</string>
     <string name="password_length">Password must be at least 6 characters</string>
@@ -100,4 +109,5 @@
     </string-array>
 
     <string name="city_spn_hint">Your city</string>
+    <string name="done">Done</string>
 </resources>

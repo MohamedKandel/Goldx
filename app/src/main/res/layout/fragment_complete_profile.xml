@@ -278,6 +278,7 @@
                 android:layout_marginTop="@dimen/_27sdp"
                 android:layout_marginEnd="@dimen/_12sdp"
                 android:orientation="horizontal"
+                android:id="@+id/greece_lang"
                 app:layout_constraintEnd_toEndOf="@+id/language_options"
                 app:layout_constraintStart_toStartOf="@+id/language_options"
                 app:layout_constraintTop_toBottomOf="@+id/language_options">
@@ -330,6 +331,25 @@
                     android:layout_weight="1" />
             </LinearLayout>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_done"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_37sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
+                android:backgroundTint="@color/gold"
+                android:fontFamily="@font/roboto_bold"
+                android:text="@string/done"
+                android:paddingTop="@dimen/_11sdp"
+                android:paddingBottom="@dimen/_11sdp"
+                android:textSize="@dimen/_11ssp"
+                app:cornerRadius="@dimen/_4sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/greece_lang"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/_24sdp"/>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

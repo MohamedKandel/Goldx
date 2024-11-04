@@ -22,6 +22,7 @@ import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Spinner
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
@@ -118,23 +119,7 @@ fun Spinner.setSpinnerAdapter(stringArray: MutableList<String>, context: Context
     spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
     this.adapter = spinnerAdapter
 
-    this.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-        override fun onNothingSelected(parent: AdapterView<*>?) {
-        }
 
-        override fun onItemSelected(
-            parent: AdapterView<*>?,
-            view: View?,
-            position: Int,
-            id: Long
-        ) {
-            val value = parent!!.getItemAtPosition(position).toString()
-            if (value == stringArray[0]) {
-                (view as TextView).setTextColor(Color.GRAY)
-            }
-        }
-
-    }
 }
 
 fun String.parseBase64(): Bitmap {
@@ -177,4 +162,8 @@ fun CardView.setBackgroundColorRandomly() {
         Color.rgb(199,224,218)
     )
     this.setBackgroundColor(colors.random())
+}
+
+fun Fragment.toast(message: String) {
+    Toast.makeText(this.requireContext(),message,Toast.LENGTH_SHORT).show()
 }

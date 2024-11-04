@@ -20,7 +20,7 @@ interface APIService {
     suspend fun getCities(@Body country: CitiesBody): Response<CitiesResponse>
 
     // authentication
-    @POST("api/Authentication/Register")
+    @POST("api/Authentication/UserRegister")
     suspend fun register(@Body body: RegisterBody): Response<Void>
 
     @POST("api/Authentication/ConfirmRegistration")
