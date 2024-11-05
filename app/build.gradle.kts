@@ -93,4 +93,7 @@ dependencies {
 
     // hint spinner
     implementation(libs.androidhintspinner)
+
+    // rating bar
+    implementation(libs.library)
 }

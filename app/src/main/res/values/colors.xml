@@ -23,6 +23,9 @@
     <color name="unselected_icon_color_light">#C81C1C1C</color>
     <color name="category_description">#939393</color>
     <color name="count_item">#A3A5AD</color>
+    <color name="product_name">#1D1F22</color>
+    <color name="old_price">#BEBFC4</color>
+    <color name="filled_star">#508A7B</color>
 
     <color name="card1">#E5E3E4</color>
     <color name="card2">#E5D7CA</color>

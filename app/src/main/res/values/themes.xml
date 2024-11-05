@@ -129,4 +129,13 @@
         <item name="android:textColor">@color/count_item</item>
     </style>
 
+    <style name="RoundImageView">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">@dimen/_15sdp</item>
+    </style>
+
+    <style name="ProductTextStyle.CategoryProduct">
+        <item name="android:textColor">@color/product_name</item>
+    </style>
+
 </resources>
