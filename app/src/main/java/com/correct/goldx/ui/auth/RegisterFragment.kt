@@ -38,8 +38,6 @@ import com.correct.goldx.helper.showPassword
 import com.correct.goldx.helper.toast
 import com.mkandeel.datastore.DataStorage
 import kotlinx.coroutines.launch
-import me.srodrigo.androidhintspinner.HintAdapter
-import me.srodrigo.androidhintspinner.HintSpinner
 
 class RegisterFragment : Fragment() {
 

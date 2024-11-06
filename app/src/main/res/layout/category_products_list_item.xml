@@ -17,72 +17,74 @@
         android:id="@+id/product_img"
         app:shapeAppearanceOverlay="@style/RoundImageView" />
 
-    <ImageView
+    <ImageButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="@id/product_img"
         app:layout_constraintEnd_toEndOf="parent"
-        android:src="@drawable/favourite_drawable_unchecked"
+        android:src="@drawable/gray_heart"
+        android:background="@drawable/white_circle"
         android:layout_marginTop="@dimen/_8sdp"
         android:layout_marginEnd="@dimen/_6sdp"
         android:id="@+id/fav_icon"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/product_img"
-        android:textSize="@dimen/_10ssp"
-        android:text="@string/gold"
-        android:fontFamily="@font/poppins_regular"
-        style="@style/ProductTextStyle.CategoryProduct"
-        android:id="@+id/txt_product_name" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/product_img"
+            android:textSize="@dimen/_10ssp"
+            android:text="@string/gold"
+            android:fontFamily="@font/poppins_regular"
+            style="@style/ProductTextStyle.CategoryProduct"
+            android:id="@+id/txt_product_name" />
 
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txt_product_name"
-        android:id="@+id/txt_product_price"
-        android:fontFamily="@font/poppins_bold"
-        style="@style/ProductTextStyle.CategoryProduct"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="@dimen/_12ssp"
-        android:text="53.00 $"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_product_name"
+            android:id="@+id/txt_product_price"
+            android:fontFamily="@font/poppins_bold"
+            style="@style/ProductTextStyle.CategoryProduct"
+            app:layout_constraintStart_toStartOf="parent"
+            android:textSize="@dimen/_12ssp"
+            android:text="53.00 $"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/txt_product_name"
-        android:id="@+id/txt_product_old_price"
-        android:fontFamily="@font/pro_sans_light"
-        style="@style/ProductTextStyle.CategoryProduct"
-        app:layout_constraintStart_toEndOf="@id/txt_product_price"
-        app:layout_constraintTop_toTopOf="@id/txt_product_price"
-        app:layout_constraintBottom_toBottomOf="@id/txt_product_price"
-        android:textSize="@dimen/_10ssp"
-        android:layout_marginStart="@dimen/_4sdp"
-        android:text="90.00 $"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_product_name"
+            android:id="@+id/txt_product_old_price"
+            android:fontFamily="@font/poppins_light"
+            style="@style/ProductTextStyle.CategoryProduct"
+            app:layout_constraintStart_toEndOf="@id/txt_product_price"
+            app:layout_constraintTop_toTopOf="@id/txt_product_price"
+            app:layout_constraintBottom_toBottomOf="@id/txt_product_price"
+            android:textSize="@dimen/_10ssp"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:text="90.00 $"/>
 
-    <me.zhanghai.android.materialratingbar.MaterialRatingBar
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_10sdp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/txt_product_price"
-        android:id="@+id/rating_bar"
-        android:rating="3"
-        android:numStars="5"
-        android:progressTint="@color/filled_star"/>
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_10sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_product_price"
+            android:id="@+id/rating_bar"
+            android:rating="3"
+            android:numStars="5"
+            android:progressTint="@color/filled_star"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toEndOf="@id/rating_bar"
-        app:layout_constraintTop_toTopOf="@id/rating_bar"
-        app:layout_constraintBottom_toBottomOf="@id/rating_bar"
-        android:text="(83)"
-        style="@style/ProductTextStyle.CategoryProduct"
-        android:textSize="@dimen/_7ssp"
-        android:layout_marginStart="@dimen/_6sdp"
-        android:id="@+id/txt_rate_count"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/rating_bar"
+            app:layout_constraintTop_toTopOf="@id/rating_bar"
+            app:layout_constraintBottom_toBottomOf="@id/rating_bar"
+            android:text="(83)"
+            style="@style/ProductTextStyle.CategoryProduct"
+            android:textSize="@dimen/_7ssp"
+            android:fontFamily="@font/poppins_light"
+            android:layout_marginStart="@dimen/_6sdp"
+            android:id="@+id/txt_rate_count"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>

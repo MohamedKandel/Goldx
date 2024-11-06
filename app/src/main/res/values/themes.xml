@@ -138,4 +138,16 @@
         <item name="android:textColor">@color/product_name</item>
     </style>
 
+    <style name="HorizontalLineStyle">
+        <item name="android:background">#F3F3F6</item>
+    </style>
+
+    <style name="ProductTextStyle.ColorTextStyle">
+        <item name="android:textColor">@color/color_color</item>
+    </style>
+
+    <style name="OUTGradeStyle">
+        <item name="android:textColor">@color/color_5</item>
+    </style>
+
 </resources>

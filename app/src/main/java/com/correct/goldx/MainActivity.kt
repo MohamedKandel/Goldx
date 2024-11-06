@@ -37,6 +37,7 @@ import com.correct.goldx.ui.auth.RegisterFragment
 import com.correct.goldx.ui.auth.UploadPhotoFragment
 import com.correct.goldx.ui.auth.VerificationFragment
 import com.correct.goldx.ui.categories.MainCategoriesFragment
+import com.correct.goldx.ui.categories.ViewProductFragment
 import com.correct.goldx.ui.contact.ContactUsFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.play.core.appupdate.AppUpdateManager
@@ -68,7 +69,8 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
         PasswordChangedFragment::class,
         VerificationFragment::class,
         ContactUsFragment::class,
-        UploadPhotoFragment::class
+        UploadPhotoFragment::class,
+        ViewProductFragment::class
     )
 
 

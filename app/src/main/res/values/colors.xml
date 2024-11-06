@@ -26,6 +26,8 @@
     <color name="product_name">#1D1F22</color>
     <color name="old_price">#BEBFC4</color>
     <color name="filled_star">#508A7B</color>
+    <color name="color_color">#777E90</color>
+    <color name="color_5">#8A8A8F</color>
 
     <color name="card1">#E5E3E4</color>
     <color name="card2">#E5D7CA</color>

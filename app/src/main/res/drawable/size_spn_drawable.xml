@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape>
+            <corners android:radius="@dimen/_4sdp"/>
+            <stroke android:width="0.5dp"
+                android:color="#393F42"/>
+
+        </shape>
+    </item>
+    <item android:drawable="@drawable/arrow_down_icon"
+        android:gravity="center_vertical|end"
+        android:top="@dimen/_11sdp"
+        android:bottom="@dimen/_11sdp"
+        android:left="@dimen/_11sdp"
+        android:right="@dimen/_11sdp"/>
+</layer-list>

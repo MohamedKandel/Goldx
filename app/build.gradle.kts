@@ -91,8 +91,8 @@ dependencies {
     // datastore
     implementation(libs.datastore)
 
-    // hint spinner
-    implementation(libs.androidhintspinner)
+    // read more text
+    implementation(libs.readmore.textview)
 
     // rating bar
     implementation(libs.library)

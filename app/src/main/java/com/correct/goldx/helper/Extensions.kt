@@ -16,6 +16,7 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.EditText
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -156,4 +157,9 @@ fun Fragment.toast(message: String) {
 
 fun TextView.offerPrice() {
     this.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
+}
+
+fun ProgressBar.changeColor() {
+    this.progressDrawable.setColorFilter(
+        Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
 }

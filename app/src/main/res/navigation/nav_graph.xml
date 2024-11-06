@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/splashFragment">
+    app:startDestination="@id/viewProductFragment">
 
     <fragment
         android:id="@+id/splashFragment"
@@ -72,4 +72,14 @@
         android:name="com.correct.goldx.ui.categories.MainCategoriesFragment"
         android:label="fragment_main_categories"
         tools:layout="@layout/fragment_main_categories" />
+    <fragment
+        android:id="@+id/categoryProductsFragment"
+        android:name="com.correct.goldx.ui.categories.CategoryProductsFragment"
+        android:label="fragment_category_products"
+        tools:layout="@layout/fragment_category_products" />
+    <fragment
+        android:id="@+id/viewProductFragment"
+        android:name="com.correct.goldx.ui.categories.ViewProductFragment"
+        android:label="fragment_view_product"
+        tools:layout="@layout/fragment_view_product" />
 </navigation>

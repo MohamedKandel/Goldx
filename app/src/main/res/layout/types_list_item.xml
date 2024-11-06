@@ -38,7 +38,7 @@
         android:gravity="end"
         android:id="@+id/txt_count_gold"
         android:layout_marginEnd="@dimen/_7sdp"
-        android:fontFamily="@font/pro_sans_light"
+        android:fontFamily="@font/poppins_light"
         style="@style/ItemsCountStyle"/>
 
     <View
