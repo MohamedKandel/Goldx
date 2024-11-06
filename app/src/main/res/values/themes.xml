@@ -150,4 +150,8 @@
         <item name="android:textColor">@color/color_5</item>
     </style>
 
+    <style name="CircularImageView">
+        <item name="cornerSize">50%</item>
+    </style>
+
 </resources>
