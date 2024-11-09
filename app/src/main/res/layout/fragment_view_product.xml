@@ -91,6 +91,7 @@
                     android:numStars="5"
                     android:progressTint="@color/filled_star"
                     android:rating="3"
+                    android:isIndicator="true"
                     app:layout_constraintStart_toStartOf="@+id/txt_product_name"
                     app:layout_constraintTop_toBottomOf="@id/txt_product_name" />
 

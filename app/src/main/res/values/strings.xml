@@ -111,13 +111,13 @@
     <string name="review">Review</string>
     <string name="reviews">reviews</string>
     <string name="write_review">Write a review</string>
+    <string name="rating_reviews">Rating and reviews</string>
     <string name="out_5">OUT OF 5</string>
     <string name="five">5</string>
     <string name="four">4</string>
     <string name="three">3</string>
     <string name="two">2</string>
     <string name="one">1</string>
-
 
 
     <string-array name="countries">
@@ -128,4 +128,8 @@
 
     <string name="city_spn_hint">Your city</string>
     <string name="done">Done</string>
+    <string name="what_is_your_rate">What is your rate?</string>
+    <string name="your_opinion">Please share your opinion\nabout the product</string>
+    <string name="your_review">Your review</string>
+    <string name="send_review">Send review</string>
 </resources>
