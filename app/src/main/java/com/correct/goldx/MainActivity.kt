@@ -39,6 +39,10 @@ import com.correct.goldx.ui.auth.VerificationFragment
 import com.correct.goldx.ui.categories.MainCategoriesFragment
 import com.correct.goldx.ui.categories.ViewProductFragment
 import com.correct.goldx.ui.contact.ContactUsFragment
+import com.correct.goldx.ui.ringsizer.HaveRingFragment
+import com.correct.goldx.ui.ringsizer.InstructionsFragment
+import com.correct.goldx.ui.ringsizer.NotHaveInstructionsFragment
+import com.correct.goldx.ui.ringsizer.RingSizerFragment
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.play.core.appupdate.AppUpdateManager
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
@@ -70,7 +74,18 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
         VerificationFragment::class,
         ContactUsFragment::class,
         UploadPhotoFragment::class,
-        ViewProductFragment::class
+        ViewProductFragment::class,
+        InstructionsFragment::class,
+        HaveRingFragment::class,
+        RingSizerFragment::class,
+        NotHaveInstructionsFragment::class
+    )
+
+    private val ringSizerArray = listOf(
+        InstructionsFragment::class,
+        HaveRingFragment::class,
+        RingSizerFragment::class,
+        NotHaveInstructionsFragment::class
     )
 
 
@@ -391,7 +406,11 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
     override fun onFragmentChangeListener(fragment: Fragment) {
         if (fragment::class in hiddenFragmentArray) {
             Log.i("Fragment mohamed", "True")
-            viewInsetsListenerNavBar()
+            if (fragment::class in ringSizerArray) {
+                viewInsetsListener()
+            } else {
+                viewInsetsListenerNavBar()
+            }
             binding.btmBar.hide()
             binding.marqueeLayout.hide()
         } else {

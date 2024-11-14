@@ -132,4 +132,18 @@
     <string name="your_opinion">Please share your opinion\nabout the product</string>
     <string name="your_review">Your review</string>
     <string name="send_review">Send review</string>
+    <string name="ring_sizer">Ring sizer</string>
+    <string name="find_how">Find out how !</string>
+    <string name="follow_steps">Follow these steps to know your ring size.</string>
+    <string name="first_step">Go to jewelry box and get a ring that fits right.</string>
+    <string name="second_step">Place your ring in the ring outline that will appear.</string>
+    <string name="third_step">Use the scale to adjust the size of the ring on the screen to circumference of your ring.</string>
+    <string name="fourth_step">You are done ! your ring size is here.</string>
+    <string name="have_ring">I Have A Ring to\nmeasure.</string>
+    <string name="not_have_ring">I Don\'t have a Ring\nto measure.</string>
+    <string name="start">Start</string>
+    <string name="proceed">Proceed</string>
+    <string name="block_hand">Don\'t close up your fingers to the screen.</string>
+    <string name="size_done">You are done ! your ring size is </string>
+    <string name="show_ring_size">Show My Ring Size</string>
 </resources>

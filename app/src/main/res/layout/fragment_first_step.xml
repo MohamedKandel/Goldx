@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.ringsizer.FirstStepFragment">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/step_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/img"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/img"
+        android:text="01"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="@dimen/_77sdp"
+        android:textSize="@dimen/_23ssp"
+        android:fontFamily="@font/playfair_regular"
+        style="@style/BlackTextView"
+        android:paddingStart="@dimen/_8sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:id="@+id/txt_number"/>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/_3sdp"
+        app:layout_constraintStart_toStartOf="@id/txt_number"
+        app:layout_constraintEnd_toEndOf="@id/txt_number"
+        app:layout_constraintTop_toBottomOf="@id/txt_number"
+        style="@style/FindHowStyle.LineStyle"
+        android:id="@+id/line"
+        android:layout_marginTop="@dimen/_3sdp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        android:gravity="center"
+        android:text="@string/first_step"
+        android:fontFamily="@font/playfair_regular"
+        android:textSize="@dimen/_14ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/BlackTextView"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:id="@+id/txt_first_step"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

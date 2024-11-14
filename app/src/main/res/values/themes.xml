@@ -174,4 +174,16 @@
         <item name="android:background">@drawable/review_dialog</item>
     </style>
 
+    <style name="FindHowStyle">
+
+    </style>
+
+    <style name="FindHowStyle.LineStyle">
+        <item name="android:background">@color/gold</item>
+    </style>
+
+    <style name="FindHowStyle.NavButtons">
+        <item name="tint">@color/gold</item>
+    </style>
+
 </resources>

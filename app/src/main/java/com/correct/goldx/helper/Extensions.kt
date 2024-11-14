@@ -142,24 +142,29 @@ fun ImageView.changeTintColor(color: Int) {
 
 fun CardView.setBackgroundColorRandomly() {
     val colors = listOf(
-        Color.rgb(229,227,228),
-        Color.rgb(229,215,202),
-        Color.rgb(254,212,213),
-        Color.rgb(255,241,194),
-        Color.rgb(199,224,218)
+        Color.rgb(229, 227, 228),
+        Color.rgb(229, 215, 202),
+        Color.rgb(254, 212, 213),
+        Color.rgb(255, 241, 194),
+        Color.rgb(199, 224, 218)
     )
     this.setBackgroundColor(colors.random())
 }
 
 fun Fragment.toast(message: String) {
-    Toast.makeText(this.requireContext(),message,Toast.LENGTH_SHORT).show()
+    Toast.makeText(this.requireContext(), message, Toast.LENGTH_SHORT).show()
 }
 
 fun TextView.offerPrice() {
     this.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
 }
 
-fun ProgressBar.changeColor() {
-    this.progressDrawable.setColorFilter(
-        Color.RED, android.graphics.PorterDuff.Mode.SRC_IN);
+fun Context.dpToMm(dp: Float): Float {
+    val densityDpi = this.resources.displayMetrics.densityDpi.toFloat()
+    return (dp * 25.4f) / densityDpi
+}
+
+fun Context.mmToDp(mm: Float): Float {
+    val densityDpi = this.resources.displayMetrics.densityDpi.toFloat()
+    return (mm * densityDpi) / 25.4f
 }
