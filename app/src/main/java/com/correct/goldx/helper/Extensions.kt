@@ -159,12 +159,7 @@ fun TextView.offerPrice() {
     this.paint.flags = Paint.STRIKE_THRU_TEXT_FLAG or Paint.ANTI_ALIAS_FLAG
 }
 
-fun Context.dpToMm(dp: Float): Float {
-    val densityDpi = this.resources.displayMetrics.densityDpi.toFloat()
-    return (dp * 25.4f) / densityDpi
-}
-
-fun Context.mmToDp(mm: Float): Float {
-    val densityDpi = this.resources.displayMetrics.densityDpi.toFloat()
-    return (mm * densityDpi) / 25.4f
+fun Fragment.dpToPx(dp: Float): Float {
+    val density = this.requireContext().resources.displayMetrics.density
+    return dp * density
 }

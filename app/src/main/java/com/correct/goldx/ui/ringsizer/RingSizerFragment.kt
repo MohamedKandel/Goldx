@@ -17,9 +17,7 @@ import com.correct.goldx.helper.Constants.MmSizes
 import com.correct.goldx.helper.Constants.RingSizes
 import com.correct.goldx.helper.Constants.RingValues
 import com.correct.goldx.helper.FragmentChangeListener
-import com.correct.goldx.helper.dpToMm
-import com.correct.goldx.helper.mmToDp
-import com.correct.goldx.helper.toast
+import com.correct.goldx.helper.dpToPx
 
 class RingSizerFragment : Fragment() {
 
@@ -132,8 +130,5 @@ class RingSizerFragment : Fragment() {
         binding.ringIcon.layoutParams = layoutParams
     }
 
-    private fun dpToPx(dp: Float): Float {
-        val density = resources.displayMetrics.density
-        return dp * density
-    }
+
 }
