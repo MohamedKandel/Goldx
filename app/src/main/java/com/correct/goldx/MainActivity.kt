@@ -6,10 +6,12 @@ import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.media.Image
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
+import android.view.WindowInsets
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
@@ -105,6 +107,11 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
         }
     }
 
+    override fun onAttachedToWindow() {
+        super.onAttachedToWindow()
+        hideStatusBar()
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setupEdgeToEdgeWithCustomization()
@@ -112,7 +119,7 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
         binding = ActivityMainBinding.inflate(layoutInflater)
 
         //enableEdgeToEdge()
-        hideStatusBar()
+        //hideStatusBar()
 
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
         if (appUpdateType == AppUpdateType.FLEXIBLE) {
@@ -425,9 +432,14 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
     }
 
     private fun hideStatusBar() {
-        window.setFlags(
-            WindowManager.LayoutParams.FLAG_FULLSCREEN,
-            WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            window.insetsController?.hide(WindowInsets.Type.statusBars())
+        } else {
+            window.setFlags(
+                WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN
+            )
+        }
     }
 
 }
