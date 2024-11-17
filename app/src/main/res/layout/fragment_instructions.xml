@@ -33,6 +33,8 @@
             android:layout_marginStart="@dimen/_12sdp"
             android:fontFamily="@font/poppins_semi_bold"
             android:text="@string/ring_sizer"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
             android:textSize="@dimen/_14ssp"
             app:layout_constraintBottom_toBottomOf="@id/btn_back"
             app:layout_constraintStart_toEndOf="@id/btn_back"

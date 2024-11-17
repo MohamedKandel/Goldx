@@ -8,7 +8,9 @@ import android.media.Image
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.ViewGroup
+import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -109,7 +111,8 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
         //enableEdgeToEdge()
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        enableEdgeToEdge()
+        //enableEdgeToEdge()
+        hideStatusBar()
 
         appUpdateManager = AppUpdateManagerFactory.create(applicationContext)
         if (appUpdateType == AppUpdateType.FLEXIBLE) {
@@ -407,18 +410,24 @@ class MainActivity : AppCompatActivity(), FragmentChangeListener {
         if (fragment::class in hiddenFragmentArray) {
             Log.i("Fragment mohamed", "True")
             if (fragment::class in ringSizerArray) {
-                viewInsetsListener()
+                //viewInsetsListener()
             } else {
-                viewInsetsListenerNavBar()
+                //viewInsetsListenerNavBar()
             }
             binding.btmBar.hide()
             binding.marqueeLayout.hide()
         } else {
             Log.i("Fragment mohamed", "False")
-            viewInsetsListener()
+            //viewInsetsListener()
             binding.btmBar.show()
             binding.marqueeLayout.show()
         }
+    }
+
+    private fun hideStatusBar() {
+        window.setFlags(
+            WindowManager.LayoutParams.FLAG_FULLSCREEN,
+            WindowManager.LayoutParams.FLAG_FULLSCREEN);
     }
 
 }
